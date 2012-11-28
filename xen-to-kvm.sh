@@ -19,6 +19,8 @@ which grub >/dev/null || abort "Unable to find grub"
 which perl >/dev/null || abort "Unable to find perl"
 which create-xml.sh >/dev/null || abort "Unable to find create-xml.sh"
 
+[ -d "/etc/libvirt/qemu/" ] || abort "The directory /etc/libvirt/qemu/ does not exist"
+
 # General Usage
 if [ $# -lt 1 ]
 then
