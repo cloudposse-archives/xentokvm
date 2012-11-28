@@ -6,8 +6,21 @@
 # tgv@montana.edu
 #
 
+# Requires: qemu-img, parted, kpartx, grub, perl
+function abort() {
+  echo $*
+  exit 1
+}
+
+which qemu-img >/dev/null || abort "Unable to find qemu-img"
+which parted >/dev/null || abort "Unable to find parted"
+which kpartx >/dev/null || abort "Unable to find kpartx"
+which grub >/dev/null || abort "Unable to find grub"
+which perl >/dev/null || abort "Unable to find perl"
+which create-xml.sh >/dev/null || abort "Unable to find create-xml.sh"
+
 # General Usage
-if [ $# < 1 ]
+if [ $# -lt 1 ]
 then
 	echo "Usage xen-to-kvm.sh <xen disk image path> [<domain name>]"
 	exit 1
