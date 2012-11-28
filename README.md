@@ -1,6 +1,6 @@
 ## Caveats
 
-This scripts do not currently work for me.
+These scripts currently do not work for me.
 
 ## Installation requirements
 
